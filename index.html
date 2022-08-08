@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="tamagochi.js"></script>
+</head>
+<body>
+    <section>
+        <div>
+            <p id="tamagochiName"></p> 
+        </div>
+        <div>
+            <p id="tamagochiEat"></p>
+            <p id="tamagochiPlay"></p>
+            <p id="tamagochiSleep"></p>
+        </div>
+        <div>
+            <p id="tamagochiHunger"></p>
+            <p id="tamagochiStamina"></p>
+            <p id="tamagochiMood"></p>
+        </div>
+    </section>
+</body>
+<script>
+document.getElementById("tamagochiName").innerHTML = axolotlTamagochi.name;
+
+document.getElementById("tamagochiPlay").innerHTML = axolotlTamagochi.play;
+document.getElementById("tamagochiEat").innerHTML = axolotlTamagochi.eat;
+document.getElementById("tamagochiSleep").innerHTML = axolotlTamagochi.sleep;
+
+document.getElementById("tamagochiHunger").innerHTML = axolotlTamagochi.hunger;
+document.getElementById("tamagochiStamina").innerHTML = axolotlTamagochi.stamina;
+document.getElementById("tamagochiMood").innerHTML = axolotlTamagochi.mood;
+
+/* document.getElementById("tamagochiPlay1").innerHTML = axolotlTamagochi.mood; */
+</script>
+</html>
