@@ -10,7 +10,14 @@ class Tamagochi {
     
     }
 
-    tamagochiEat(_stamina, _hunger){
+
+    tamagochiStatus( _hunger, _mood, _name, _stamina){
+        return ":)"
+        
+    
+    }
+    tamagochiEat( _hunger, _stamina){
+    ":)"
     }
         
     tamagochiPlay( _hunger, _mood, _stamina){
@@ -20,20 +27,14 @@ class Tamagochi {
     }
 }
 
-
-
-
-
-
 const axolotlTamagochi = new Tamagochi( 4, Tamagochi._mood,'Axolotl', 5)
 console.log(axolotlTamagochi)
 
+console.log(axolotlTamagochi.tamagochiStatus)
 console.log(axolotlTamagochi.tamagochiEat)
-
 console.log(axolotlTamagochi.tamagochiPlay)
 console.log(axolotlTamagochi.tamagochiSleep)
 
-console.log(Tamagochi.tamagochiEat)
 
 
 /* console.log(axolotlTamagochi.eat)
