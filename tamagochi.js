@@ -12,22 +12,34 @@ class Tamagochi {
 
 
     tamagochiStatus( _hunger, _mood, _name, _stamina){
-        return ":)"
+        return ":)";
         
     
     }
     tamagochiEat( _hunger, _stamina){
-    ":)"
+    this._hunger -= 2,
+    this._stamina -= 1;
     }
         
     tamagochiPlay( _hunger, _mood, _stamina){
+        this._hunger += 1,
+        this._mood += 1,
+        this._stamina -= 1;
     }
 
     tamagochiSleep(_stamina){
+        this._stamina += 2;
     }
 }
 
-const axolotlTamagochi = new Tamagochi( 4, Tamagochi._mood,'Axolotl', 5)
+const axolotlTamagochi = new Tamagochi( Tamagochi._hunger, Tamagochi._mood,'Axolotl', 4)
+
+console.log(axolotlTamagochi)
+axolotlTamagochi.tamagochiEat();
+console.log(axolotlTamagochi)
+axolotlTamagochi.tamagochiPlay();
+console.log(axolotlTamagochi)
+axolotlTamagochi.tamagochiSleep();
 console.log(axolotlTamagochi)
 
 console.log(axolotlTamagochi.tamagochiStatus)
