@@ -1,10 +1,11 @@
 class Tamagochi {
-    constructor( hunger = 4, mood = 4, name, stamina = 4) {
+    constructor( hunger = 4, mood = 4, name, stamina = 4, status = this.tamagochiStatus()) {
         this._hunger = hunger;
         this._mood = mood;
         this._name = name;
         this._stamina = stamina;
-
+        
+        this._status = status;
         
         console.log(Tamagochi)
     
@@ -12,7 +13,10 @@ class Tamagochi {
 
 
     tamagochiStatus( _hunger, _mood, _name, _stamina){
-        return ":)";
+        if (_stamina <= 0) {
+            ":)";
+        }  
+            
         
     
     }
@@ -32,9 +36,20 @@ class Tamagochi {
     }
 }
 
-const axolotlTamagochi = new Tamagochi( Tamagochi._hunger, Tamagochi._mood,'Axolotl', 4)
+const axolotlTamagochi = new Tamagochi( Tamagochi._hunger, Tamagochi._mood,'Axolotl', 4, Tamagochi._status)
+
+console.log(axolotlTamagochi._status)
+console.log(axolotlTamagochi)
+axolotlTamagochi.tamagochiEat();
+function axolotlFeed() {
+    axolotlTamagochi.tamagochiEat();
+}
+console.log(axolotlTamagochi)
+axolotlFeed();
 
 console.log(axolotlTamagochi)
+console.log(axolotlTamagochi._status)
+
 axolotlTamagochi.tamagochiEat();
 console.log(axolotlTamagochi)
 axolotlTamagochi.tamagochiPlay();

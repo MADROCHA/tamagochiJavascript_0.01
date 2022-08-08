@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="tamagochi.js"></script>
+
 </head>
 <body>
     
@@ -33,6 +33,8 @@
 
         <div>
             <p>Actions</p>
+            <input id="" onclick="axolotlFeed()" value="" type="button">
+            
             <p id="tamagochiEat"></p>
             <p id="tamagochiPlay"></p>
             <p id="tamagochiSleep"></p>
@@ -40,7 +42,16 @@
     </section>
 
 </body>
+
+<script src="tamagochi.js"></script>
 <script>
+console.log(axolotlTamagochi)
+
+function axolotlFeed() {
+    axolotlTamagochi.tamagochiEat();
+}
+console.log(axolotlTamagochi)
+/* document.getElementById("tamagochiFeed").innerHTML = axolotlFeed(); */
 document.getElementById("tamagochiName").innerHTML = axolotlTamagochi._name;
 
 document.getElementById("tamagochiEat").innerHTML = axolotlTamagochi.tamagochiEat;
