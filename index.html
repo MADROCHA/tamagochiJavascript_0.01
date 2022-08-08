@@ -33,6 +33,10 @@
 
         <div>
             <p>Actions</p>
+            <input id="" onclick="axolotlTamagochi.tamagochiEat()" value="Feed" type="button">
+            
+            <input id="" onclick="axolotlTamagochi.tamagochiPlay()" value="Play" type="button">
+            
             <input id="" onclick="axolotlFeed()" value="" type="button">
             
             <p id="tamagochiEat"></p>
@@ -45,12 +49,11 @@
 
 <script src="tamagochi.js"></script>
 <script>
-console.log(axolotlTamagochi)
-
-function axolotlFeed() {
+    function axolotlFeed() {
     axolotlTamagochi.tamagochiEat();
 }
-console.log(axolotlTamagochi)
+    console.log(axolotlTamagochi)
+    
 /* document.getElementById("tamagochiFeed").innerHTML = axolotlFeed(); */
 document.getElementById("tamagochiName").innerHTML = axolotlTamagochi._name;
 
