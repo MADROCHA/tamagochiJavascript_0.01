@@ -43,7 +43,7 @@ class Tamagochi {
     this._hunger -= 2,
     this._stamina -= 1;
     this.tamagochiStatus();
-    console.log(axolotlTamagochi._status + ' delicious')
+    console.log(axolotlTamagochi._status + ' <3 Delicious')
     console.log(axolotlTamagochi)
 }
 
@@ -52,13 +52,13 @@ tamagochiPlay( _hunger, _mood, _stamina){
     this._mood += 1,
     this._stamina -= 1;
     this.tamagochiStatus();
-    console.log(axolotlTamagochi._status + ' fun')
+    console.log(axolotlTamagochi._status + ' ! Fun')
     console.log(axolotlTamagochi)
 }
 
 tamagochiSleep(_stamina){
-    this._stamina += 2;
     console.log(axolotlTamagochi._status + ' zZz')
+    this._stamina += 2;
     this.tamagochiStatus();
     console.log(axolotlTamagochi)
 }
