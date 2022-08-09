@@ -13,6 +13,9 @@ class Tamagochi {
 
 
     tamagochiStatus( _hunger, _mood, _name, _stamina, _status){
+        document.getElementById("tamagochiHunger").innerHTML = axolotlTamagochi._hunger;
+        document.getElementById("tamagochiMood").innerHTML = axolotlTamagochi._mood;
+        document.getElementById("tamagochiStamina").innerHTML = axolotlTamagochi._stamina;
         if (this._stamina <= 3 && this._stamina >= 2) {
             this._status = "e__e";
             document.getElementById("tamagochiStatus").innerHTML = axolotlTamagochi._status;
@@ -44,7 +47,7 @@ class Tamagochi {
         }
     }
 
-
+    
     
 
     tamagochiEat( _hunger, _stamina, _status){
@@ -64,9 +67,11 @@ tamagochiPlay( _hunger, _mood, _stamina){
     this._hunger += 1,
     this._mood += 1,
     this._stamina -= 1;
+    
     console.log(axolotlTamagochi)
     this.tamagochiStatus();
     console.log(axolotlTamagochi._status + ' ! Fun')
+    
 }
 
 tamagochiSleep(_stamina){
