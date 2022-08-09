@@ -13,44 +13,54 @@ class Tamagochi {
 
 
     tamagochiStatus( _hunger, _mood, _name, _stamina, _status){
-        if (this._stamina <=0) {
-            this._status = "-__-";
-            tamagochiSleep();
-
-        }  else if (this._stamina < 3) {
+        if (this._stamina < 3 && this._stamina >= 2) {
             this._status = "e__e";
-
-        }   else if (this._mood <= 2) {
-            this._status = "`__´";
+            
+        }  else if (this._stamina <= 1 && this._stamina > 0) {
+            this._status = "-__-"
+            
+        }  else if (this._stamina <= 0) {
+            this._status = "x__x"
+            axolotlTamagochi.tamagochiSleep();
+            this._status = axolotlTamagochi._status;
+            
 
         }   else if (this._mood >= 8) {
             this._status = "*__*";
             
-        } else {
+        }   else if (this._mood <= 2) {
+            this._status = "`__´";
+
+        }   else {
             this._status = "^__^";
         }
     }
+
+
+    
 
     tamagochiEat( _hunger, _stamina, _status){
     this._hunger -= 2,
     this._stamina -= 1;
     this.tamagochiStatus();
+    console.log(axolotlTamagochi._status + ' delicious')
     console.log(axolotlTamagochi)
-    console.log(axolotlTamagochi._status)
 }
 
 tamagochiPlay( _hunger, _mood, _stamina){
     this._hunger += 1,
     this._mood += 1,
     this._stamina -= 1;
+    this.tamagochiStatus();
+    console.log(axolotlTamagochi._status + ' fun')
     console.log(axolotlTamagochi)
-    console.log(axolotlTamagochi._status)
 }
 
 tamagochiSleep(_stamina){
     this._stamina += 2;
+    console.log(axolotlTamagochi._status + ' zZz')
+    this.tamagochiStatus();
     console.log(axolotlTamagochi)
-    console.log(axolotlTamagochi._status)
 }
 }
 
@@ -85,6 +95,25 @@ console.log(axolotlTamagochi._mood)
 console.log(axolotlTamagochi._stamina)
 
 
+/*     tamagochiStatus( _hunger, _mood, _name, _stamina, _status){
+        if (this._stamina < 3) {
+            this._status = "e__e";
+            
+        }  else if (this._stamina <= 0) {
+            this._status = "-__-"
+            tamagochiSleep();
+
+        }   else if (this._mood >= 8) {
+            this._status = "*__*";
+            
+        }   else if (this._mood <= 2) {
+            this._status = "`__´";
+
+        } else {
+            this._status = "^__^";
+        }
+    }
+ */
 
 /* console.log(axolotlTamagochi._status)
 console.log(axolotlTamagochi)
