@@ -13,7 +13,7 @@ class Tamagochi {
 
 
     tamagochiStatus( _hunger, _mood, _name, _stamina, _status){
-        if (this._stamina < 3 && this._stamina >= 2) {
+        if (this._stamina <= 3 && this._stamina >= 2) {
             this._status = "e__e";
             
         }  else if (this._stamina <= 1 && this._stamina > 0) {
@@ -21,8 +21,8 @@ class Tamagochi {
             
         }  else if (this._stamina <= 0) {
             this._status = "x__x"
-            axolotlTamagochi.tamagochiSleep();
-            this._status = axolotlTamagochi._status;
+            
+            
             
 
         }   else if (this._mood >= 8) {
@@ -42,25 +42,25 @@ class Tamagochi {
     tamagochiEat( _hunger, _stamina, _status){
     this._hunger -= 2,
     this._stamina -= 1;
-    this.tamagochiStatus();
-    console.log(axolotlTamagochi._status + ' <3 Delicious')
+    console.log(this._status + ' <3 Delicious')
     console.log(axolotlTamagochi)
+    this.tamagochiStatus();
 }
 
 tamagochiPlay( _hunger, _mood, _stamina){
     this._hunger += 1,
     this._mood += 1,
     this._stamina -= 1;
-    this.tamagochiStatus();
     console.log(axolotlTamagochi._status + ' ! Fun')
     console.log(axolotlTamagochi)
+    this.tamagochiStatus();
 }
 
 tamagochiSleep(_stamina){
-    console.log(axolotlTamagochi._status + ' zZz')
     this._stamina += 2;
-    this.tamagochiStatus();
+    console.log(axolotlTamagochi._status + ' zZz')
     console.log(axolotlTamagochi)
+    this.tamagochiStatus();
 }
 }
 
