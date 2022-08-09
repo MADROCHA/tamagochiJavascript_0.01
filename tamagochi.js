@@ -13,17 +13,17 @@ class Tamagochi {
 
 
     tamagochiStatus( _hunger, _mood, _name, _stamina, _status){
-        if (_stamina <=0) {
+        if (this._stamina <=0) {
             this._status = "-__-";
-            Tamagochi.tamagochiSleep();
+            tamagochiSleep();
 
-        }  else if (_stamina < 3) {
+        }  else if (this._stamina < 3) {
             this._status = "e__e";
 
-        }   else if (Tamagochi.this_mood <= 2) {
+        }   else if (this._mood <= 2) {
             this._status = "`__´";
 
-        }   else if (Tamagochi._mood >= 8) {
+        }   else if (this._mood >= 8) {
             this._status = "*__*";
             
         } else {
