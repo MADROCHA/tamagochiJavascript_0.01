@@ -15,24 +15,32 @@ class Tamagochi {
     tamagochiStatus( _hunger, _mood, _name, _stamina, _status){
         if (this._stamina <= 3 && this._stamina >= 2) {
             this._status = "e__e";
-            
+            document.getElementById("tamagochiStatus").innerHTML = axolotlTamagochi._status;
+
         }  else if (this._stamina <= 1 && this._stamina > 0) {
             this._status = "-__-"
-            
+            document.getElementById("tamagochiStatus").innerHTML = axolotlTamagochi._status;
+
         }  else if (this._stamina <= 0) {
             this._status = "x__x"
-            
+            document.getElementById("tamagochiStatus").innerHTML = axolotlTamagochi._status + ' zZz';
+
             
             
 
         }   else if (this._mood >= 8) {
             this._status = "*__*";
-            
+            document.getElementById("tamagochiStatus").innerHTML = axolotlTamagochi._status;
+
         }   else if (this._mood <= 2) {
             this._status = "`__´";
+            document.getElementById("tamagochiStatus").innerHTML = axolotlTamagochi._status;
+
 
         }   else {
             this._status = "^__^";
+            document.getElementById("tamagochiStatus").innerHTML = axolotlTamagochi._status;
+
         }
     }
 
@@ -42,25 +50,30 @@ class Tamagochi {
     tamagochiEat( _hunger, _stamina, _status){
     this._hunger -= 2,
     this._stamina -= 1;
-    console.log(this._status + ' <3 Delicious')
+    /* status preUpdate */
     console.log(axolotlTamagochi)
+    /* status preUpdate */
+    /* update */
     this.tamagochiStatus();
+    /* update */
+    /* status mood postUpdate */
+    console.log(this._status + ' <3 Delicious')
 }
 
 tamagochiPlay( _hunger, _mood, _stamina){
     this._hunger += 1,
     this._mood += 1,
     this._stamina -= 1;
-    console.log(axolotlTamagochi._status + ' ! Fun')
     console.log(axolotlTamagochi)
     this.tamagochiStatus();
+    console.log(axolotlTamagochi._status + ' ! Fun')
 }
 
 tamagochiSleep(_stamina){
     this._stamina += 2;
-    console.log(axolotlTamagochi._status + ' zZz')
     console.log(axolotlTamagochi)
     this.tamagochiStatus();
+    console.log(axolotlTamagochi._status + ' zZz')
 }
 }
 
