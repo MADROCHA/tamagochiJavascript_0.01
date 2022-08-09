@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomogachi 1.1</title>
+    <link href="/dist/output.css" rel="stylesheet">
+
+</head>
+<body class="w-full h-full justify-between bg-colorDarkPurple text-colorPaleWhite  ">
+    
+    <section class="gap-10 flex flex-col justify-center items-center text-center w-full ">
+
+        <h1 class=" text-4xl font-bold ">
+            Tamagochi !
+        </h1>
+        <div>
+            <p id="tamagochiName"></p> 
+        </div> 
+        <div class="flex gap-5">
+            <div class="">
+                <p>Hunger</p>
+                <p id="tamagochiHunger"></p>
+            </div>
+
+            <div>
+                <p>Mood</p>
+                <p id="tamagochiMood"></p>
+            </div>
+
+            <div>
+                <p>Stamina</p>
+                <p id="tamagochiStamina"></p>
+            </div>
+        </div>
+        
+        
+        <div class="flex-col items-center border-2 flex">
+            <p
+                id="tamagochiYawn"
+                class="flex border-2 rounded-[] justify-center  text-4xl">            
+            </p> 
+            
+            <div class="flex border items-center justify-center w-80 h-80 text-7xl">
+                <p id="tamagochiStatus"></p> 
+            </div>
+        </div>
+        
+
+
+        
+
+        
+        <div class="flex-col flex text-5xl gap-5 py-10 ">
+                <p class="| border justify-center w-full text-2xl flex ">
+                    Actions
+                </p>
+                
+                <div class="| flex  gap-5 ">
+                    <input
+                    id="" onclick="axolotlFeedSleep()" value="FEED" type="button"
+                    class="hover:bg-colorPaleWhite hover:text-colorDarkPurple | w-[180px] border-4 py-3 px-4 ">
+                    <input 
+                    id="" onclick="axolotlCheerSleep()" value="CHEER" type="button"
+                    class="hover:bg-colorPaleWhite hover:text-colorDarkPurple | text-center w-[180px] border-4 py-3 px-4 ">
+                </div>
+        
+        </div>
+    </section>
+
+</body>
+
+<script src="tamagochi.js"></script>
+<script>
+    function axolotlFeedSleep() {
+        
+        if (axolotlTamagochi._stamina <= 0) {
+        axolotlTamagochi.tamagochiSleep();
+        } else {
+        axolotlTamagochi.tamagochiEat();
+        }
+        
+        
+    }
+    function axolotlCheerSleep() {
+        
+        if (axolotlTamagochi._stamina <= 0) {
+        axolotlTamagochi.tamagochiSleep();
+        } else {
+        axolotlTamagochi.tamagochiPlay();
+        }
+        
+        
+    }
+    
+    console.log(axolotlTamagochi)
+    
+/* document.getElementById("tamagochiName").innerHTML = axolotlTamagochi._name;
+document.getElementById("tamagochiStatus").innerHTML = axolotlTamagochi._status;
+
+document.getElementById("tamagochiEat").innerHTML = axolotlTamagochi.tamagochiEat;
+document.getElementById("tamagochiPlay").innerHTML = axolotlTamagochi.tamagochiPlay;
+document.getElementById("tamagochiSleep").innerHTML = axolotlTamagochi.tamagochiSleep; */
+
+
+
+
+</script>
+</html>

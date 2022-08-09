@@ -1,0 +1,22 @@
+{
+  "name": "tailwind",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tamagochi.js",
+  "devDependencies": {
+    "tailwindcss": "^3.1.8"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MADROCHA/tamagochiJavascript_0.01.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MADROCHA/tamagochiJavascript_0.01/issues"
+  },
+  "homepage": "https://github.com/MADROCHA/tamagochiJavascript_0.01#readme"
+}
