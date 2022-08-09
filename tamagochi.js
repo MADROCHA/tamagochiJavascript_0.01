@@ -1,146 +1,77 @@
-class Tamagochi {
-    constructor( hunger = 4, mood = 4, name, stamina = 4, status ) {
-        this._hunger = hunger;
-        this._mood = mood;
-        this._name = name;
-        this._stamina = stamina;
+let hungerDisplay = document.querySelector('.displayHunger');
+let moodDisplay = document.querySelector('.displayMood');
+let staminaDisplay = document.querySelector('.displayStamina');
+let faceDisplay= document.querySelector('.displayFace'); 
+
+let counterPlayElement = document.querySelector('.counterPlay');
+let counterFeedElement = document.querySelector('.counterFeed');
+let counterSleepElement = document.querySelector('.counterSleep');
+
+let hunger = 4;
+let mood = 4;
+let stamina = 4;
+let face ="^u^";
+updateDisplay();
+
+
+counterPlayElement.addEventListener("click",()=>{
+    hunger ++;
+    mood++;
+    stamina--;
+    updateDisplay();
+
+});
+
+counterFeedElement.addEventListener("click",()=>{
+    hunger = hunger-2;
+    mood = mood+3;
+    stamina--;
+    updateDisplay();
+
+});
+
+
+function tamagotchiFace()
+{ 
+    if (hungerDisplay >8){
+        return "*O*";
+        updateDisplay();
         
-        this._status = status;
+    }
+    if (stamina<3){
+        return "cansado";
+        updateDisplay();
         
-        console.log(Tamagochi)
+    }
+    if (mood<2){
+        return "enfadado";
+        updateDisplay();
+    }
     
-    }
-
-
-    tamagochiStatus( _hunger, _mood, _name, _stamina, _status){
-        if (this._stamina <= 3 && this._stamina >= 2) {
-            this._status = "e__e";
-            
-        }  else if (this._stamina <= 1 && this._stamina > 0) {
-            this._status = "-__-"
-            
-        }  else if (this._stamina <= 0) {
-            this._status = "x__x"
-            
-            
-            
-
-        }   else if (this._mood >= 8) {
-            this._status = "*__*";
-            
-        }   else if (this._mood <= 2) {
-            this._status = "`__´";
-
-        }   else {
-            this._status = "^__^";
-        }
-    }
-
-
-    
-
-    tamagochiEat( _hunger, _stamina, _status){
-    this._hunger -= 2,
-    this._stamina -= 1;
-    console.log(this._status + ' <3 Delicious')
-    console.log(axolotlTamagochi)
-    this.tamagochiStatus();
 }
 
-tamagochiPlay( _hunger, _mood, _stamina){
-    this._hunger += 1,
-    this._mood += 1,
-    this._stamina -= 1;
-    console.log(axolotlTamagochi._status + ' ! Fun')
-    console.log(axolotlTamagochi)
-    this.tamagochiStatus();
-}
+function updateDisplay(){
+    hungerDisplay.innerHTML = hunger;
+    moodDisplay.innerHTML = mood;
+    staminaDisplay.innerHTML = stamina;
+    faceDisplay.innerHTML = face;
 
-tamagochiSleep(_stamina){
-    this._stamina += 2;
-    console.log(axolotlTamagochi._status + ' zZz')
-    console.log(axolotlTamagochi)
-    this.tamagochiStatus();
-}
-}
+};
 
-const axolotlTamagochi = new Tamagochi( Tamagochi._hunger, Tamagochi._mood,'Axolotl', 4, Tamagochi._status )
-
-console.log(axolotlTamagochi._status)
-console.log(axolotlTamagochi.tamagochiStatus)
-
-console.log(axolotlTamagochi)
-/* axolotlTamagochi.tamagochiEat(); */
-axolotlTamagochi.tamagochiStatus();
-console.log(axolotlTamagochi)
-
-
-
-console.log(axolotlTamagochi.tamagochiStatus)
-console.log(axolotlTamagochi._status)
-
-
-/* axolotlTamagochi.tamagochiEat(); */
-console.log(axolotlTamagochi)
-/* axolotlTamagochi.tamagochiPlay(); */
-console.log(axolotlTamagochi)
-/* axolotlTamagochi.tamagochiSleep(); */
-console.log(axolotlTamagochi)
-
-
-
-console.log(axolotlTamagochi._name)
-console.log(axolotlTamagochi._hunger)
-console.log(axolotlTamagochi._mood)
-console.log(axolotlTamagochi._stamina)
-
-
-/*     tamagochiStatus( _hunger, _mood, _name, _stamina, _status){
-        if (this._stamina < 3) {
-            this._status = "e__e";
-            
-        }  else if (this._stamina <= 0) {
-            this._status = "-__-"
-            tamagochiSleep();
-
-        }   else if (this._mood >= 8) {
-            this._status = "*__*";
-            
-        }   else if (this._mood <= 2) {
-            this._status = "`__´";
-
-        } else {
-            this._status = "^__^";
-        }
-    }
- */
-
-/* console.log(axolotlTamagochi._status)
-console.log(axolotlTamagochi)
-axolotlTamagochi.tamagochiEat();
-function axolotlFeed() {
-    axolotlTamagochi.tamagochiEat();
-}
-console.log(axolotlTamagochi)
-axolotlFeed();
-
-console.log(axolotlTamagochi)
-console.log(axolotlTamagochi._status)
-
-axolotlTamagochi.tamagochiEat();
-console.log(axolotlTamagochi)
-axolotlTamagochi.tamagochiPlay();
-console.log(axolotlTamagochi)
-axolotlTamagochi.tamagochiSleep();
-console.log(axolotlTamagochi)
-
-console.log(axolotlTamagochi.tamagochiStatus)
-console.log(axolotlTamagochi.tamagochiEat)
-console.log(axolotlTamagochi.tamagochiPlay)
-console.log(axolotlTamagochi.tamagochiSleep)
-
-console.log(axolotlTamagochi._hunger)
-console.log(axolotlTamagochi._mood)
-console.log(axolotlTamagochi._stamina)
-console.log(axolotlTamagochi._name) */
-
+// function tamagotchiStatus(value) {
+        
+//         switch (value) {
+//             case this._stamina < 3 && this._stamina >= 2:
+//                 return "e__e";
+//                 break;
+//             case this._stamina <= 1 && this._stamina > 0:
+//                 return"-__-";
+//                 break;
+//             case this.mood >= 8:
+//                 return "*__*";
+//                 break;
+//             default:
+//                     return ":-|"
+//         }
+//         console.log(tamagotchiStatus);
+//     }
