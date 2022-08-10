@@ -16,53 +16,75 @@ class Currency extends Item {
     constructor(bit,  goldChunck, name, stat, _description) {
         super (name, stat, _description);
         this._bit = bit ;
-        this._goldChunck = goldChunck 
+        this._goldChunck = goldChunck ;
+        
     }
 }
-
-var itemTome = [
-    waterCarrot = new Food ("Water Carrot", 1, ),
-    soupFlowers = new Food ("Soup of Flowers", 1, ),
+/* stat value 0 = the item isnt known, it remains yet to discover */
+/* stat value 1 = the item is known, the character doesnt have the item on inventory */
+/* stat value 2 = the item is carried by the character, the player does have acces that item on inventory */
+var worldItems = [
+    waterCarrot = new Food ("Water Carrot", 0, ),
+    soupFlowers = new Food ("Soup of Flowers", 0, ),
     axolotlGold = new Item ("Axolotl Reward", 0),
-    bitBag = new Currency (50, 0, "Bit Poach", 1 ) ,
+    bitBag = new Currency (50, 1, "Bit Poach", 2 ) ,
 ];
-/* waterCarrot.effect = "food, increases stamina by 1 (next day?) && decreases hunger by 1 (instant?) "
-soupFlowers.efect = "food, increases stamina & mood by 1 - decreases hunger by 1"
-
+waterCarrot.effect = "foodEffect, increases stamina by 1 (next day?) && decreases hunger by 1 (instant?) "
 waterCarrot.description = "somewhat it seems yummy"
-soupFlowers.description = "food, but isn't for you"
-axolotlGold._description = "friendship is something beautiful, isn't really? "
-bitBag._description = "Small amount of Bits " */
 
-console.log(itemTome);
+soupFlowers.efect = "foodEffect, increases stamina & mood by 1 - decreases hunger by 1"
+soupFlowers.description = "food.. but doesn't fit your taste"
+
+axolotlGold._description = "friendship is something beautiful, isn't really? "
+bitBag._description = "the fabric is a bit worn, yet useful"
+
+var inventory = [];
+for (let i of worldItems) {
+    if (i._stat === 2) {
+        inventory.push(i._name);
+    }
+};
+
+function countBits(bitBag) {
+    let countBitsReply = `Your open ${bitBag._name} holds `;
+    if (bitBag._bit) {
+        countBitsReply = countBitsReply + `${bitBag._bit}x bit`;
+        if (bitBag._goldChunck && bitBag._bit) {
+                countBitsReply = countBitsReply + " and";
+        };
+    };
+    if (bitBag._goldChunck) {
+        countBitsReply = countBitsReply + `${bitBag._goldChunck}x guile`;
+        if (bitBag._goldChunck && bitBag._bit) {
+            countBitsReply = countBitsReply + `${bitBag._goldChunck}x guile`;
+        };
+    };
+    if (!bitBag._goldChunck && !bitBag._bit) {
+        countBitsReply = countBitsReply + "no";
+    };
+    countBitsReply = countBitsReply + " chunck"
+    if (bitBag._bit > 1 || (bitBag._bit === 0 && bitBag._goldChunck > 1) || (!bitBag._goldChunck && !bitBag._bit)) {
+        countBitsReply = countBitsReply + "s"
+    };
+    countBitsReply = countBitsReply + ".";
+    console.log(countBitsReply)
+};
+
+
+console.log(inventory);
+console.log(bitBag);
+console.log(bitBag._name);
+console.log(bitBag._bit);
+console.log(countBits());
+
+
+
+
+
+
+console.log(worldItems);
 console.log(waterCarrot);
 console.log(waterCarrot.effect);
 
 
 
-/* class Item {
-    constructor(bag, description, effect, name, category ) {
-        this._bag = bag;
-        this._description = description;
-        this._effect = effect;
-        this._name = name;
-        this._category = category;
-        
-        Item.this_bag = [];
-        
-        console.log(Item);
-    }
-    getItem() {
-    Item._bag = [];
-
-
-    }
-    useItem() {
-
-    }
-
-}
-Item._bag = [];
-
-console.log(this._bag);
-console.log(this._bag); */

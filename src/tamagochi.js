@@ -103,19 +103,7 @@ console.log(axolotlTamagochi.tamagochiStatus)
 console.log(axolotlTamagochi._status)
 
 
-/* axolotlTamagochi.tamagochiEat(); */
-console.log(axolotlTamagochi)
-/* axolotlTamagochi.tamagochiPlay(); */
-console.log(axolotlTamagochi)
-/* axolotlTamagochi.tamagochiSleep(); */
-console.log(axolotlTamagochi)
 
-
-
-console.log(axolotlTamagochi._name)
-console.log(axolotlTamagochi._hunger)
-console.log(axolotlTamagochi._mood)
-console.log(axolotlTamagochi._stamina)
 
 
 /*     tamagochiStatus( _hunger, _mood, _name, _stamina, _status){
