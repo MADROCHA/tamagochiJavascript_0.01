@@ -27,7 +27,7 @@ var worldItems = [
     waterCarrot = new Food ("Water Carrot", 0, ),
     soupFlowers = new Food ("Soup of Flowers", 0, ),
     axolotlGold = new Item ("Axolotl Reward", 0),
-    bitBag = new Currency (0, , "Bit Poach", 2 ) 
+    bitBag = new Currency (2, 1, "Bit Poach", 2 ) 
 ];
 waterCarrot.effect = "foodEffect, increases stamina by 1 (next day?) && decreases hunger by 1 (instant?) ";
 waterCarrot.description = "somewhat it seems yummy";
@@ -46,22 +46,25 @@ for (let i of worldItems) {
 };
 
 
-function countBits(worldItems) {
+function countBits() {
     let countBitsReply = `Your open ${bitBag._name} holds `;
     if (bitBag._bit) {
-        countBitsReply = countBitsReply + `${bitBag._bit} bit `;
+        countBitsReply = countBitsReply + `${bitBag._bit} bit`;
+        if (bitBag._bit > 1 && bitBag._goldChunck > 0) {
+            countBitsReply = countBitsReply + "s";
+        };
         if (bitBag._goldChunck && bitBag._bit) {
-                countBitsReply = countBitsReply + "and ";
+                countBitsReply = countBitsReply + " and ";
         };
     };
     if (bitBag._goldChunck) {
-        countBitsReply = countBitsReply + `${bitBag._goldChunck}x guile `;
+        countBitsReply = countBitsReply + `${bitBag._goldChunck} guile`;
 
     };
     if (!bitBag._goldChunck && !bitBag._bit) {
-        countBitsReply = countBitsReply + "no ";
+        countBitsReply = countBitsReply + "no";
     };
-    countBitsReply = countBitsReply + "chunck"
+    countBitsReply = countBitsReply + " chunck"
     if (bitBag._bit > 1 || (bitBag._bit > 0 && bitBag._goldChunck > 0) || (!bitBag._goldChunck && !bitBag._bit)) {
         countBitsReply = countBitsReply + "s"
     };
