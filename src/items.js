@@ -29,11 +29,13 @@ var worldItems = [
     axolotlGold = new Item ("Axolotl Reward", 0),
     bitBag = new Currency (1, 2, "Bit Poach", 2 ) 
 ];
-waterCarrot.effect = "foodEffect, increases stamina by 1 (next day?) && decreases hunger by 1 (instant?) ";
-waterCarrot.description = "somewhat it seems yummy";
+waterCarrot._effect = "feed your tama with a healthy meal, decreases hunger and increases mood aswell ";
+/* increases stamina by 1 (next day?) && decreases hunger by 1 (instant?) */ 
+waterCarrot._description = "somewhat it seems yummy";
 
-soupFlowers.efect = "foodEffect, increases stamina & mood by 1 - decreases hunger by 1";
-soupFlowers.description = "food.. but doesn't fit your taste";
+soupFlowers._effect = "enhance your tama mood also fills stomach a little ";
+/* foodEffect, increases stamina & mood by 1 - decreases hunger by 1 */
+soupFlowers._description = "food.. but doesn't fit your taste";
 
 axolotlGold._description = "friendship is something beautiful, isn't really? ";
 bitBag._description = "the fabric is a bit worn, yet useful";
@@ -75,8 +77,22 @@ function countBits() {
 };
 countBits();
 
+function examineInventorySlot (worldItems) {
+    console.log(worldItems._name);
+    console.log(worldItems._description);
+    if(worldItems._effect ) {
+        console.log(`Use ${worldItems._name} to ${worldItems._effect}.`)
+    }
+    if(worldItems._bit || worldItems._goldChunck) {
+        countBits(bitBag);
+    }
+}
 
-console.log(worldItems[3]);
+examineInventorySlot(waterCarrot);
+examineInventorySlot(soupFlowers);
+examineInventorySlot(bitBag);
+
+/* console.log(worldItems[3]);
 console.log(inventory);
 console.log(bitBag);
 console.log(bitBag._name);
@@ -92,7 +108,7 @@ console.log(countBits());
 
 console.log(worldItems);
 console.log(waterCarrot);
-console.log(waterCarrot.effect);
+console.log(waterCarrot.effect); */
 
 
 
