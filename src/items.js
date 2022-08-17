@@ -52,6 +52,8 @@ for (let i of worldItems) {
     if (i._stat === 1) {
         inventory.pop(i.name);
     }
+    document.getElementById("inventoryId").innerHTML = JSON.stringify(inventory);
+    
 };
 
 function waterCarrotEffect() {
@@ -60,7 +62,7 @@ console.log(axolotlTamagochi)
 if (waterCarrot._stat === 2 ) {
     waterCarrot._stat = 1;
     
-
+    
     axolotlTamagochi._hunger -= 1;
     axolotlTamagochi._mood += 1;
     axolotlTamagochi._stamina += 1;
@@ -69,9 +71,11 @@ if (waterCarrot._stat === 2 ) {
 }
 };
 
+console.log(waterCarrot)
 console.log(axolotlTamagochi)
 waterCarrotEffect();
 console.log(axolotlTamagochi)
+
 
 console.log(waterCarrot)
 console.log(waterCarrot._effect)
