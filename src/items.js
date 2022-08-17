@@ -24,18 +24,22 @@ class Currency extends Item {
 /* stat value 1 = the item is known, the character doesnt have the item on inventory */
 /* stat value 2 = the item is carried by the character, the player does have acces that item on inventory */
 var worldItems = [
-    waterCarrot = new Food ("Water Carrot", 0, ),
+    waterCarrot = new Food ("Water Carrot", 2, ),
     soupFlowers = new Food ("Soup of Flowers", 0, ),
     axolotlGold = new Item ("Axolotl Reward", 0),
     bitBag = new Currency (1, 2, "Bit Poach", 2 ) 
 ];
-waterCarrot._effect = "feed your tama with a healthy meal, decreases hunger and increases mood aswell ";
+waterCarrot._effect = {
+    useFunctionWaterCarrot() {
+        return waterCarrotEffect();
+    }
+} ;
 /* increases stamina by 1 (next day?) && decreases hunger by 1 (instant?) */ 
-waterCarrot._description = "somewhat it seems yummy";
+waterCarrot._description = "somewhat it seems yummy, it feeds your tama with a healthy meal, decreases hunger and increases mood aswell ";
 
-soupFlowers._effect = "enhance your tama mood also fills stomach a little ";
+soupFlowers._effect = " ";
 /* foodEffect, increases stamina & mood by 1 - decreases hunger by 1 */
-soupFlowers._description = "food.. but doesn't fit your taste";
+soupFlowers._description = "food.. but doesn't fit your taste, it enhance your tama mood also fills stomach a little";
 
 axolotlGold._description = "friendship is something beautiful, isn't really? ";
 bitBag._description = "the fabric is a bit worn, yet useful";
@@ -45,7 +49,32 @@ for (let i of worldItems) {
     if (i._stat === 2) {
         inventory.push(i._name);
     }
+    if (i._stat === 1) {
+        inventory.pop(i.name);
+    }
 };
+
+function waterCarrotEffect() {
+
+console.log(axolotlTamagochi)
+if (waterCarrot._stat === 2 ) {
+    waterCarrot._stat = 1;
+    
+
+    axolotlTamagochi._hunger -= 1;
+    axolotlTamagochi._mood += 1;
+    axolotlTamagochi._stamina += 1;
+
+    
+}
+};
+
+console.log(axolotlTamagochi)
+waterCarrotEffect();
+console.log(axolotlTamagochi)
+
+console.log(waterCarrot)
+console.log(waterCarrot._effect)
 
 
 function countBits() {
